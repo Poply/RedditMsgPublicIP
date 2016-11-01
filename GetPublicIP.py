@@ -5,9 +5,9 @@ import sys
 def reddit_message(myIP):
     r = praw.Reddit("My Assistant")
     r.login("MYACCOUNT", "MYPASSWORD")                  #Custom setting
-    r.send_message("MYOTHERACCOUNT", "new ip", myIP)    #Custom setting
+    r.send_message("OTHERACCOUNT", "new ip", myIP)      #Custom setting
 
-fileLocation = "/home/pi/scripts/currentip.txt"
+fileLocation = "/ABSOLUTEFILEPATH/currentip.txt"        #Custom setting
 f = open(fileLocation, 'r+')
 oldIP = f.read()[:-1] #TODO currently cutting off last character because it is picking up a garbage char and ruining the if...then check when comparing IPs
 
