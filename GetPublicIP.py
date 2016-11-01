@@ -1,6 +1,7 @@
 import urllib.request
 import praw
 import sys
+import os
 
 def reddit_message(myIP):
     r = praw.Reddit("My Assistant")
@@ -21,6 +22,6 @@ else:
         f.seek(0)
         f.write(myIP)
         reddit_message(myIP)
-        print("not equal, sending message ", len(myIP), len(oldIP), (myIP == oldIP))
+        print("Detected IP change. Sending message ", len(myIP), len(oldIP), (myIP == oldIP))
 finally:
     f.close()
