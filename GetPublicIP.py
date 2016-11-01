@@ -7,7 +7,7 @@ def reddit_message(myIP):
     r.login("MYACCOUNT", "MYPASSWORD")                  #Custom setting
     r.send_message("OTHERACCOUNT", "new ip", myIP)      #Custom setting
 
-fileLocation = "/ABSOLUTEFILEPATH/currentip.txt"        #Custom setting
+fileLocation = os.getcwd() + str("/" if "/" in os.getcwd() else "\\") + "currentip.txt"     #Will look at current directory to determine whether to use / or \
 f = open(fileLocation, 'r+')
 oldIP = f.read()[:-1] #TODO currently cutting off last character because it is picking up a garbage char and ruining the if...then check when comparing IPs
 
