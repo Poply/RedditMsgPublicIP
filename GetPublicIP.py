@@ -9,7 +9,7 @@ def reddit_message(myIP, config):
     r.send_message(config["main"]["toaccount"], "new ip", myIP)      #Custom setting
 
 config = configparser.ConfigParser()
-config.read("currentip.cfg")                            #MIGHT NEED TO PUT IN ABSOLUTE PATH
+config.read("currentip.cfg")                            #Absolute path to be added
 oldIP = config["main"]["address"]
 
 try:
