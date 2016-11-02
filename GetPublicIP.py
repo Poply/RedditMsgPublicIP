@@ -5,11 +5,11 @@ import configparser
 
 def reddit_message(myIP, config):
     r = praw.Reddit("My Assistant")
-    r.login(config["main"]["fromaccount"], config["main"]["fromaccountpassword"])                  #Custom setting
-    r.send_message(config["main"]["toaccount"], "new ip", myIP)      #Custom setting
+    r.login(config["main"]["fromaccount"], config["main"]["fromaccountpassword"])
+    r.send_message(config["main"]["toaccount"], "new ip", myIP)
 
 config = configparser.ConfigParser()
-config.read("currentip.cfg")                            #Absolute path to be added
+config.read("currentip.cfg")
 oldIP = config["main"]["address"]
 
 try:
