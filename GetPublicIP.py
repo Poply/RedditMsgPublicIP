@@ -2,6 +2,7 @@ import urllib.request
 import praw
 import sys
 import configparser
+import os
 
 def reddit_message(myIP, config):
     r = praw.Reddit("My Assistant")
@@ -9,7 +10,7 @@ def reddit_message(myIP, config):
     r.send_message(config["main"]["toaccount"], "new ip", myIP)
 
 config = configparser.ConfigParser()
-config.read("currentip.cfg")
+config.read(os.path.join(os.path.abspath(os.path.dirname(__file__)), "currentip.cfg"))
 oldIP = config["main"]["address"]
 
 try:
