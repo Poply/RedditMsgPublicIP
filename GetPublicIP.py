@@ -20,7 +20,7 @@ except (urllib.error.HTTPError, urllib.error.URLError) as err:
     sys.exit()
 else:
     if (myIP != oldIP):
-        with open("currentip.cfg", "w") as configfile:
+        with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "currentip.cfg"), "w") as configfile:
             config.set("main", "address", myIP)
             config.write(configfile)
             configfile.close()
